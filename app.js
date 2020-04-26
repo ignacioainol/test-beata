@@ -1,7 +1,6 @@
 const express = require('express');
 const path = require('path');
 const importFunc = require('./functions.js')
-var cors = require('cors')
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -24,7 +23,6 @@ app.get('/portfolio', function (req, res) {
 
 app.use('/assets', express.static(path.join(__dirname, "./assets")));
 app.use('/js', express.static(path.join(__dirname, "./js")));
-app.use(cors());
 
 const fromAnotherFile = require("./functions")
 app.get('/', function (req, res) {
